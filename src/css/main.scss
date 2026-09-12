@@ -1,1 +1,141 @@
-/* Your SCSS here. */
+$blue: #315f91;
+$light-blue: #e8f1fa;
+$gray: #f3f3f3;
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 56px; }
+body { margin: 0; font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
+a { color: $blue; }
+button { font: inherit; cursor: pointer; }
+h1 { font-size: 32px; }
+h2 { margin: 0 0 24px; font-size: 26px; }
+h3 { margin: 0 0 12px; font-size: 20px; }
+.container { width: 90%; max-width: 1000px; margin: 0 auto; }
+section, footer { padding: 50px 0; text-align: center; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid #cf7900; outline-offset: 4px; }
+
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 80px;
+  background: $blue;
+  transition: height .3s;
+  nav { height: 100%; display: flex; justify-content: center; align-items: center; gap: 28px; }
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    padding: 5px 2px;
+    border-bottom: 2px solid transparent;
+    transition: font-size .3s;
+    &:hover, &[aria-current] { border-bottom-color: white; }
+  }
+  &.small {
+    height: 56px;
+    a { font-size: 16px; }
+  }
+}
+
+#home {
+  background: linear-gradient(#e8f1faed, #e8f1faed), url('../assets/projects/ultratex.webp') center / cover fixed;
+  min-height: 310px;
+  display: flex;
+  align-items: center;
+  scroll-margin-top: 24px;
+  h1 { margin: 0 0 16px; }
+  p { margin: 8px 0; }
+  .button { margin-top: 16px; }
+}
+.button {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 4px;
+  background: $blue;
+  color: white;
+  text-decoration: none;
+  transition: background-color .2s;
+  &:hover { background: #24476d; }
+}
+.about-columns {
+  display: flex;
+  gap: 20px;
+  article { flex: 1; padding: 22px; background: $gray; border: 1px solid #ddd; border-radius: 4px; }
+  p { margin-bottom: 0; text-align: left; }
+}
+
+#projects { background: $gray; }
+.section-intro { margin: 0 0 24px; }
+.carousel { position: relative; max-width: 700px; margin: 0 auto; }
+.slide {
+  animation: fade-in .3s;
+  img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+  h3 { margin: 18px 0 4px; }
+  p { min-height: 52px; margin: 4px 0 12px; }
+}
+.previous, .next {
+  position: absolute;
+  top: 25%;
+  padding: 12px;
+  border: 0;
+  color: white;
+  background: #0009;
+  font-size: 22px;
+  &:hover { background: #000d; }
+}
+.previous { left: 0; }
+.next { right: 0; }
+#slide-number { font-size: 14px; margin: 16px 0 0; }
+@keyframes fade-in { from { opacity: .3; } to { opacity: 1; } }
+
+#video video {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  background: black;
+}
+
+#contact { background: $light-blue; }
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 20px 0;
+  a { display: inline-flex; align-items: center; gap: 8px; }
+}
+.icon { width: 20px; height: 20px; display: inline-block; background: currentColor; mask: var(--icon) center / contain no-repeat; }
+.github { --icon: url('../assets/icons/github.svg'); }
+.linkedin { --icon: url('../assets/icons/linkedin.svg'); }
+.copyright { font-size: 14px; margin-bottom: 0; }
+
+#project-dialog {
+  width: 90%;
+  max-width: 500px;
+  max-height: 85vh;
+  padding: 30px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  h2 { padding-right: 20px; }
+  &::backdrop { background: #0008; }
+}
+#close-dialog { position: absolute; right: 12px; top: 8px; border: 0; background: none; font-size: 26px; }
+body.modal-open { overflow: hidden; }
+
+@media (max-width: 600px) {
+  #navbar nav { gap: 15px; }
+  #navbar a { font-size: 16px; }
+  #navbar.small a { font-size: 14px; }
+  h1 { font-size: 28px; }
+  .about-columns { flex-direction: column; }
+  section, footer { padding: 35px 0; }
+  #home { background-attachment: scroll; }
+  .previous, .next { top: 15%; padding: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

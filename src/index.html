@@ -1,13 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jingzhi Bao's Figurine Designs</title>
+</head>
+<body>
+  <header id="navbar">
+    <nav aria-label="Main navigation">
+      <a href="#home" aria-current="location">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Designs</a>
+      <a href="#video">Video</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="container">
+        <h1>Hi, I'm Jingzhi Bao!</h1>
+        <p>I'm a student at UIUC, and I love art and design.</p>
+        <p>Welcome to my personal page! Here are some of my figurine design images.</p>
+        <a class="button" href="#projects">See my designs</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-columns">
+          <article>
+            <h3>Education</h3>
+            <p>I'm studying computer science at UIUC. Before that, I received my bachelor's degree from CUHK-Shenzhen.</p>
+          </article>
+          <article>
+            <h3>Art &amp; Design</h3>
+            <p>I love art and design. I enjoy trying different colors, shapes, and small details to give a character its own personality.</p>
+          </article>
+          <article>
+            <h3>Figurine Design</h3>
+            <p>I like fantasy characters and colorful figurines. This page is a small collection of my designs and the styles I enjoy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>My Figurine Designs</h2>
+        <p class="section-intro">Here are three of my figurine design images. Use the arrows to see each one.</p>
+        <div class="carousel" tabindex="0" role="region" aria-label="Figurine design slideshow">
+          <article class="slide">
+            <img src="assets/projects/ultratex.webp" alt="My fantasy workshop design, featuring a bearded character and decorative objects." width="1440" height="810">
+            <h3>Fantasy Workshop</h3>
+            <p>A fantasy-style figure in a workshop full of small details.</p>
+            <button class="button details" data-description="This design shows a bearded fantasy character surrounded by small objects. I like the warm colors and the mix of wood, stone, and metal. The little details make the workshop feel like part of a story.">Read more</button>
+          </article>
+          <article class="slide" hidden>
+            <img src="assets/projects/lumitex.webp" alt="My colorful character designs displayed on wooden shelves." width="1440" height="810">
+            <h3>Colorful Characters</h3>
+            <p>A collection of cheerful figures with bright colors and different shapes.</p>
+            <button class="button details" data-description="This collection brings together colorful characters with different shapes and expressions. I like how each figure has its own personality, while the warm colors help them look good together on a shelf.">Read more</button>
+          </article>
+          <article class="slide" hidden>
+            <img src="assets/projects/calitex.webp" alt="My fantasy figurine collection, with different costumes and character styles." width="1440" height="810">
+            <h3>Fantasy Collection</h3>
+            <p>Different characters, costumes, and details in one display.</p>
+            <button class="button details" data-description="This design image brings together several fantasy figures. Their outfits, poses, and accessories give each one a different look. I enjoy seeing how small changes in these details can make a character stand out.">Read more</button>
+          </article>
+          <button class="previous" aria-label="Previous design">❮</button>
+          <button class="next" aria-label="Next design">❯</button>
+        </div>
+        <p id="slide-number" aria-live="polite">1 / 3</p>
+      </div>
+    </section>
+
+    <section id="video">
+      <div class="container">
+        <h2>A Closer Look</h2>
+        <p class="section-intro">A short video of the fantasy workshop and its details.</p>
+        <video controls playsinline preload="metadata" poster="assets/projects/ultratex.webp" aria-label="Fantasy workshop video">
+          <source src="https://static.jingzhi03.com/projects/ultratex/ultratex_siga_forward.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>You can reach me at <a href="mailto:jingzhibao03@gmail.com">jingzhibao03@gmail.com</a>.</p>
+      <div class="social-links">
+        <a href="https://github.com/jzbao03"><span class="icon github" aria-hidden="true"></span>GitHub</a>
+        <a href="https://www.linkedin.com/in/jingzhibao"><span class="icon linkedin" aria-hidden="true"></span>LinkedIn</a>
+      </div>
+      <p><a href="#home">Back to top</a></p>
+      <p class="copyright">© 2026 Jingzhi Bao</p>
+    </div>
+  </footer>
+
+  <dialog id="project-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+    <button id="close-dialog" aria-label="Close design details" autofocus>×</button>
+    <h2 id="dialog-title"></h2>
+    <p id="dialog-description"></p>
+  </dialog>
+</body>
 </html>
